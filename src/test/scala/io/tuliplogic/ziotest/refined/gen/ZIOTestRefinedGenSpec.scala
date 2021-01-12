@@ -1,4 +1,4 @@
-package io.tuliplogic.ziotest.refinedgen
+package io.tuliplogic.ziotest.refined.gen
 
 import zio.test.{DefaultRunnableSpec, ZSpec}
 

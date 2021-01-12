@@ -16,7 +16,7 @@ lazy val root = project
     name := "zio-test-refined",
     organization := "io.tuliplogic",
     scalaVersion := "2.13.1",
-    libraryDependencies ++= (allZioCore ++ allZioTest),
+    libraryDependencies ++= (allRefined ++ allZioCore ++ allZioTest),
     testFrameworks += new TestFramework("zio.test.sbt.ZTestFramework")
 
   )

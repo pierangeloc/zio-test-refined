@@ -12,8 +12,9 @@ object Dependencies {
   val allZioCore = Seq(zio)
 
   val zioTest         = "dev.zio" %% "zio-test"        % Versions.zio
+  val zioTestMagnolia = "dev.zio" %% "zio-test-magnolia"        % Versions.zio
   val zioTestSbt      = "dev.zio" %% "zio-test-sbt"    % Versions.zio % Test
-  val allZioTest = Seq(zioTest, zioTestSbt)
+  val allZioTest = Seq(zioTest, zioTestMagnolia, zioTestSbt)
 
   val refinedCore = "eu.timepit" %% "refined"      % Versions.refined
   val allRefined  = Seq(refinedCore)

@@ -6,6 +6,8 @@ import shapeless.Witness
 import zio.test.Gen
 import zio.test.magnolia.DeriveGen
 
+object string extends RefinedStringInstances
+
 trait RefinedStringInstances {
   implicit def endsWithStringDeriveGen[S <: String](
     implicit

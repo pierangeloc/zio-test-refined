@@ -7,7 +7,7 @@ import zio.test.Gen
 import zio.test.magnolia.DeriveGen
 
 trait RefinedStringInstances {
-  implicit def endsWithArbitrary[S <: String](
+  implicit def endsWithStringDeriveGen[S <: String](
     implicit
     ws: Witness.Aux[S]
   ): DeriveGen[Refined[String, EndsWith[S]]] =
@@ -15,7 +15,7 @@ trait RefinedStringInstances {
       Gen.anyString.map(value => Refined.unsafeApply(value + ws.value))
     )
 
-  implicit def startsWithArbitrary[S <: String](
+  implicit def startsWithStringDeriveGen[S <: String](
     implicit
     ws: Witness.Aux[S]
   ): DeriveGen[Refined[String, StartsWith[S]]] =
@@ -23,7 +23,7 @@ trait RefinedStringInstances {
       Gen.anyString.map(value => Refined.unsafeApply(ws.value + value))
     )
 
-  implicit val uuidStringArbitrary: DeriveGen[Refined[String, Uuid]] =
+  implicit val uuidStringDeriveGen: DeriveGen[Refined[String, Uuid]] =
     DeriveGen.instance(
       Gen.anyUUID.map(value => Refined.unsafeApply(value.toString))
     )

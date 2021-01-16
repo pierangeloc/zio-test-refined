@@ -8,14 +8,17 @@ import zio.test.Gen
 /**
  * Generators for numeric types, following the lines of https://github.com/fthomas/refined/tree/master/modules/scalacheck/shared/src/main/scala/eu/timepit/refined/scalacheck
  */
-trait NumericGen {
+trait RefinedNumericInstances {
 
-  val x: Int Refined Positive = ???
+//  val x: Int Refined Positive = ???
 
+  def positiveInt:
   //shameless copy from
   def genRefinedInt[F[_, _], T: Numeric, P](min: F[T, P], max: F[T, P])(
                                                implicit rt: RefType[F],
                                                v: Validate[T, P]): Gen[Random, F[T, P]] =
     ???
+
+
 
 }

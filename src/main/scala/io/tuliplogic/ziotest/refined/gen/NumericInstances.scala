@@ -62,3 +62,5 @@ trait NumericInstances {
     Gen.double(Double.MinValue, wn.snd).map(Refined.unsafeApply)
 
 }
+
+object numeric extends NumericInstances
